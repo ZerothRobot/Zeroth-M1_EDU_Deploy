@@ -653,29 +653,36 @@ See [control_system.py](https://github.com/ZerothOpenBridge/Zeroth-M1_EDU_Deploy
 
 
 
-**Mechanical limits (raw angles):**
+**Joint limits (hardware protection implemented):**
 
 
-| Joint                     | Range (degrees) |
-| ------------------------- | --------------- |
-| Left/right shoulder pitch | -165 ~ 165      |
-| Left shoulder roll        | -38 ~ 100       |
-| Right shoulder roll       | -100 ~ 38       |
-| Left elbow roll           | -40 ~ 100       |
-| Right elbow roll          | -100 ~ 40       |
-| Left/right hip yaw        | -18 ~ 18        |
-| Left/right hip roll       | -20 ~ 20        |
-| Left hip pitch            | -160 ~ 50       |
-| Right hip pitch           | -50 ~ 160       |
-| Left knee pitch           | -155 ~ 60       |
-| Right knee pitch          | -60 ~ 155       |
-| Left ankle pitch          | -70 ~ 145       |
-| Right ankle pitch         | -145 ~ 70       |
-| Head yaw                  | -50 ~ 85        |
-| Head pitch                | -30 ~ 30        |
+| Joint                    | Range (degrees) |
+| ------------------------ | --------------- |
+| 0 Left shoulder pitch    | -143.5 ~ 158.5  |
+| 1 Left shoulder roll     | -35 ~ 98        |
+| 2 Left elbow roll        | -37 ~ 103       |
+| 3 Unused                 | 0 ~ 0           |
+| 4 Right shoulder pitch   | -158.5 ~ 143.5  |
+| 5 Right shoulder roll    | -98 ~ 35        |
+| 6 Right elbow roll       | -103 ~ 37       |
+| 7 Unused                 | 0 ~ 0           |
+| 8 Left hip yaw           | -16 ~ 16        |
+| 9 Left hip roll          | -20 ~ 20        |
+| 10 Left hip pitch        | -160 ~ 49       |
+| 11 Left knee pitch       | -150 ~ 62       |
+| 12 Left ankle pitch      | -67 ~ 140       |
+| 13 Left ankle roll       | -25 ~ 102       |
+| 14 Right hip yaw         | -16 ~ 16        |
+| 15 Right hip roll        | -20 ~ 20        |
+| 16 Right hip pitch       | -49 ~ 160       |
+| 17 Right knee pitch      | -62 ~ 150       |
+| 18 Right ankle pitch     | -140 ~ 67       |
+| 19 Right ankle roll      | -102 ~ 25       |
+| Head yaw                 | -50 ~ 85        |
+| Head pitch               | -30 ~ 30        |
 
 
-caution: exceed these ranges can cause servo failures or damages. The zero point for the joint raw angles of M1 correspond to a crouch pose (for calibration usage). In RL deployment, use the standard-form joint angle, see `kinematic_state_feedback_msg_callback` in [control_system.py](https://github.com/ZerothOpenBridge/Zeroth-M1_EDU_Deploy/blob/main/JOYIN_MINI_DEPLOY/control_system.py).   
+caution: exceed these ranges can cause servo failures or damages. The zero point for the joint angles of M1 correspond to a crouch pose (for calibration usage). In RL deployment, use the standard-form joint angle, see `kinematic_state_feedback_msg_callback` in [control_system.py](https://github.com/ZerothOpenBridge/Zeroth-M1_EDU_Deploy/blob/main/JOYIN_MINI_DEPLOY/control_system.py).   
 
 ### Factory Action
 

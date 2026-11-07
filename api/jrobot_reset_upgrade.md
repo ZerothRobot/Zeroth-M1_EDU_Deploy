@@ -21,6 +21,8 @@ sync
 reboot
 ```
 
+This method is to reset the system partition and APP partition to factory state without deleting program running data (/userdata). To clean up program data, please use the reset button above the backpack.
+
 ## App Upgrade
 
 ### 1. Download the Upgrade Package

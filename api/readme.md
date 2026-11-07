@@ -432,6 +432,9 @@ Optional related topics: `/audio/speaker_pcm_status` (`std_msgs/Int32` playback 
 ```bash
 ros2 topic pub /audio/speaker_pcm sensor_msgs/msg/Image \
   "{header: {frame_id: '0'}, height: 1, width: 5760, encoding: 'pcm_48000_16_2', is_bigendian: false, step: 5760, data: []}"
+
+# You can adjust the volume by this command:
+c=$(readlink /proc/asound/duplexaudio); amixer -c ${c##*card} sset DAC 96%
 ```
 
 ---

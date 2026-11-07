@@ -432,6 +432,9 @@ ros2 topic echo /audio/capture_pcm --field encoding --once
 ```bash
 ros2 topic pub /audio/speaker_pcm sensor_msgs/msg/Image \
   "{header: {frame_id: '0'}, height: 1, width: 5760, encoding: 'pcm_48000_16_2', is_bigendian: false, step: 5760, data: []}"
+
+# 可以通过命令行修改音量
+c=$(readlink /proc/asound/duplexaudio); amixer -c ${c##*card} sset DAC 96%
 ```
 
 ---
